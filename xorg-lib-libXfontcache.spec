@@ -1,5 +1,3 @@
-# $Rev: 3306 $, $Date: 2005-08-27 17:42:48 $
-#
 Summary:	Xfontcache library
 Summary(pl):	Bibliteka Xfontcache
 Name:		xorg-lib-libXfontcache
@@ -12,12 +10,12 @@ Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXfontcache-%{version}.ta
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	xorg-proto-fontcacheproto-devel
-BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-proto-fontcacheproto-devel
 BuildRequires:	xorg-util-util-macros
-BuildRoot:	%{tmpdir}/libXfontcache-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -28,15 +26,13 @@ Xfontcache library.
 %description -l pl
 Biblioteka Xfontcache.
 
-
 %package devel
 Summary:	Header files libXfontcache development
 Summary(pl):	Pliki nag³ówkowe do biblioteki libXfontcache
 Group:		X11/Development/Libraries
-Requires:	xorg-lib-libXfontcache = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-proto-fontcacheproto-devel
 Requires:	xorg-lib-libXext-devel
-
 
 %description devel
 Xfontcache library.
@@ -50,12 +46,11 @@ Biblioteka Xfontcache.
 Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
 u¿ywaj±cych biblioteki libXfontcache.
 
-
 %package static
-Summary:	Static libXfontcache libraries
-Summary(pl):	Biblioteki statyczne libXfontcache
-Group:		Development/Libraries
-Requires:	xorg-lib-libXfontcache-devel = %{version}-%{release}
+Summary:	Static libXfontcache library
+Summary(pl):	Biblioteka statyczna libXfontcache
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Xfontcache library.
@@ -67,10 +62,8 @@ Biblioteka Xfontcache.
 
 Pakiet zawiera statyczn± bibliotekê libXfontcache.
 
-
 %prep
 %setup -q -n libXfontcache-%{version}
-
 
 %build
 %{__libtoolize}
@@ -82,7 +75,6 @@ Pakiet zawiera statyczn± bibliotekê libXfontcache.
 
 %{__make}
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
@@ -90,28 +82,23 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %post	-p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog
-%attr(755,root,wheel) %{_libdir}/libXfontcache.so.*
-
+%attr(755,root,root) %{_libdir}/libXfontcache.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libXfontcache.so
 %{_libdir}/libXfontcache.la
-%attr(755,root,wheel) %{_libdir}/libXfontcache.so
 %{_pkgconfigdir}/xfontcache.pc
 %{_mandir}/man3/*.3*
-
 
 %files static
 %defattr(644,root,root,755)
