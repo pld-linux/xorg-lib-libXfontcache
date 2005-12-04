@@ -24,8 +24,8 @@ Xfontcache library.
 Biblioteka Xfontcache.
 
 %package devel
-Summary:	Header files libXfontcache development
-Summary(pl):	Pliki nag³ówkowe do biblioteki libXfontcache
+Summary:	Header files for libXfontcache library
+Summary(pl):	Pliki nag³ówkowe biblioteki libXfontcache
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-proto-fontcacheproto-devel
@@ -35,7 +35,7 @@ Requires:	xorg-lib-libXext-devel
 Xfontcache library.
 
 This package contains the header files needed to develop programs that
-use these libXfontcache.
+use libXfontcache.
 
 %description devel -l pl
 Biblioteka Xfontcache.
