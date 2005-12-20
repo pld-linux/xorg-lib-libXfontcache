@@ -1,12 +1,12 @@
 Summary:	Xfontcache library
 Summary(pl):	Bibliteka Xfontcache
 Name:		xorg-lib-libXfontcache
-Version:	0.99.2
+Version:	1.0.0
 Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXfontcache-%{version}.tar.bz2
-# Source0-md5:	a0438e4367d252e8dafaea832c6b314a
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC4/lib/libXfontcache-%{version}.tar.bz2
+# Source0-md5:	e87f2cc66526743cc66ed312a1e507e4
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
