@@ -1,5 +1,5 @@
 Summary:	Xfontcache library
-Summary(pl.UTF-8):   Bibliteka Xfontcache
+Summary(pl.UTF-8):	Bibliteka Xfontcache
 Name:		xorg-lib-libXfontcache
 Version:	1.0.4
 Release:	1
@@ -25,7 +25,7 @@ Biblioteka Xfontcache.
 
 %package devel
 Summary:	Header files for libXfontcache library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libXfontcache
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libXfontcache
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-proto-fontcacheproto-devel
@@ -45,7 +45,7 @@ używających biblioteki libXfontcache.
 
 %package static
 Summary:	Static libXfontcache library
-Summary(pl.UTF-8):   Biblioteka statyczna libXfontcache
+Summary(pl.UTF-8):	Biblioteka statyczna libXfontcache
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
