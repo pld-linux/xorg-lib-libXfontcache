@@ -1,5 +1,5 @@
 Summary:	Xfontcache library
-Summary(pl):	Bibliteka Xfontcache
+Summary(pl.UTF-8):   Bibliteka Xfontcache
 Name:		xorg-lib-libXfontcache
 Version:	1.0.4
 Release:	1
@@ -20,12 +20,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Xfontcache library.
 
-%description -l pl
+%description -l pl.UTF-8
 Biblioteka Xfontcache.
 
 %package devel
 Summary:	Header files for libXfontcache library
-Summary(pl):	Pliki nag³ówkowe biblioteki libXfontcache
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libXfontcache
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-proto-fontcacheproto-devel
@@ -37,15 +37,15 @@ Xfontcache library.
 This package contains the header files needed to develop programs that
 use libXfontcache.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Biblioteka Xfontcache.
 
-Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
-u¿ywaj±cych biblioteki libXfontcache.
+Pakiet zawiera pliki nagÅ‚Ã³wkowe niezbÄ™dne do kompilowania programÃ³w
+uÅ¼ywajÄ…cych biblioteki libXfontcache.
 
 %package static
 Summary:	Static libXfontcache library
-Summary(pl):	Biblioteka statyczna libXfontcache
+Summary(pl.UTF-8):   Biblioteka statyczna libXfontcache
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -54,10 +54,10 @@ Xfontcache library.
 
 This package contains the static libXfontcache library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka Xfontcache.
 
-Pakiet zawiera statyczn± bibliotekê libXfontcache.
+Pakiet zawiera statycznÄ… bibliotekÄ™ libXfontcache.
 
 %prep
 %setup -q -n libXfontcache-%{version}
