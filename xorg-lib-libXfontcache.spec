@@ -1,5 +1,5 @@
-Summary:	Xfontcache library
-Summary(pl.UTF-8):	Bibliteka Xfontcache
+Summary:	Xfontcache - X-TrueType font cache extension client library
+Summary(pl.UTF-8):	Xfontcache - biblioteka kliencka rozszerzenia cache'u fontów X-TrueType
 Name:		xorg-lib-libXfontcache
 Version:	1.0.5
 Release:	1
@@ -14,14 +14,15 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-proto-fontcacheproto-devel
-BuildRequires:	xorg-util-util-macros >= 0.99.2
+BuildRequires:	xorg-util-util-macros >= 1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Xfontcache library.
+Xfontcache is an X-TrueType font cache extension client library.
 
 %description -l pl.UTF-8
-Biblioteka Xfontcache.
+Xfontcache to biblioteka kliencka rozszerzenia cache'u fontów
+X-TrueType.
 
 %package devel
 Summary:	Header files for libXfontcache library
@@ -32,13 +33,14 @@ Requires:	xorg-proto-fontcacheproto-devel
 Requires:	xorg-lib-libXext-devel
 
 %description devel
-Xfontcache library.
+Xfontcache is an X-TrueType font cache extension client library.
 
 This package contains the header files needed to develop programs that
 use libXfontcache.
 
 %description devel -l pl.UTF-8
-Biblioteka Xfontcache.
+Xfontcache to biblioteka kliencka rozszerzenia cache'u fontów
+X-TrueType.
 
 Pakiet zawiera pliki nagłówkowe niezbędne do kompilowania programów
 używających biblioteki libXfontcache.
@@ -50,12 +52,13 @@ Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Xfontcache library.
+Xfontcache is an X-TrueType font cache extension client library.
 
 This package contains the static libXfontcache library.
 
 %description static -l pl.UTF-8
-Biblioteka Xfontcache.
+Xfontcache to biblioteka kliencka rozszerzenia cache'u fontów
+X-TrueType.
 
 Pakiet zawiera statyczną bibliotekę libXfontcache.
 
@@ -87,15 +90,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog
+%doc COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libXfontcache.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libXfontcache.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libXfontcache.so
 %{_libdir}/libXfontcache.la
 %{_pkgconfigdir}/xfontcache.pc
-%{_mandir}/man3/*.3x*
+%{_mandir}/man3/FontCache*.3x*
+%{_mandir}/man3/Xfontcache.3x*
 
 %files static
 %defattr(644,root,root,755)
