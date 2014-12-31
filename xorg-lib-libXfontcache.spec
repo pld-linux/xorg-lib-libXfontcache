@@ -99,8 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libXfontcache.so
 %{_libdir}/libXfontcache.la
 %{_pkgconfigdir}/xfontcache.pc
-%{_mandir}/man3/FontCache*.3x*
-%{_mandir}/man3/Xfontcache.3x*
+%{_mandir}/man3/FontCache*.3*
+%{_mandir}/man3/Xfontcache.3*
 
 %files static
 %defattr(644,root,root,755)
