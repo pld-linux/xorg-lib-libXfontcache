@@ -2,12 +2,12 @@ Summary:	Xfontcache - X-TrueType font cache extension client library
 Summary(pl.UTF-8):	Xfontcache - biblioteka kliencka rozszerzenia cache'u fontów X-TrueType
 Name:		xorg-lib-libXfontcache
 Version:	1.0.5
-Release:	3
+Release:	4
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXfontcache-%{version}.tar.bz2
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXfontcache-%{version}.tar.bz2
 # Source0-md5:	bbd37768c87f63cf2eb845b2c0f56515
-URL:		http://xorg.freedesktop.org/
+URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -79,8 +79,10 @@ Pakiet zawiera statyczną bibliotekę libXfontcache.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	DESTDIR=$RPM_BUILD_ROOT
+
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libXfontcache.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -97,7 +99,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libXfontcache.so
-%{_libdir}/libXfontcache.la
 %{_pkgconfigdir}/xfontcache.pc
 %{_mandir}/man3/FontCache*.3*
 %{_mandir}/man3/Xfontcache.3*
